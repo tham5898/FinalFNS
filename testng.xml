@@ -5,6 +5,7 @@
     <classes>
       <class name="runTest.LoginTest"/>
       <class name="runTest.AddCustomerTest"></class>
+      <class name="runTest.CustomerOATest"></class>
       
     </classes>
   </test> <!-- Test -->

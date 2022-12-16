@@ -1,5 +1,8 @@
 package pageObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,15 +14,67 @@ public class AddCustomerApp extends PageObjectManage {
 	public By iconXCustomer = By.cssSelector(".content form #select2-customer_id-65-container");
 	public By iconXAccount = By.cssSelector(".content form #select2-customer_account_id-pn-container");
 	public By iconXOA = By.cssSelector(".content form #select2-customer_oa_id-0a-container");
+	By inpName = By.cssSelector(".content form input#name");
+	By findList = By.cssSelector(".content table tbody");
+	By findName = By.cssSelector(".content table tbody .column-name");
+	ArrayList<String> name = new ArrayList<>();
+	By inpDes = By.cssSelector(".content form textarea[name=description]");
+	By iconX = By.cssSelector(".content form .select2-selection__clear");
 
 	public AddCustomerApp(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 	}
 
+	public void listIconX(String x) {
+		List<WebElement> listIcon = driver.findElements(iconX);
+		System.out.println(listIcon.size());
+		for (int i = 0; i < listIcon.size(); i++) {
+			String value = listIcon.get(i).getText();
+			if (value.equals(x)) {
+				System.out.println(value);
+				listIcon.get(i).click();
+			}
+		}
+	}
+
+	public void listNameTable() {
+		WebElement getListTable = driver.findElement(findList);
+		List<WebElement> list = getListTable.findElements(findName);
+		for (int i = 0; i < list.size(); i++) {
+			name.add(list.get(i).getText());
+		}
+		System.out.println(name);
+	}
+
+	public void checkDataUpdate() {
+		WebElement getName = driver.findElement(inpName);
+		String value = getName.getAttribute("value");
+		if (name.indexOf(value) != -1) {
+			System.out.println("Case pass");
+		} else {
+			System.out.println("Bị Sai rồi check lại đi!!!!!!");
+		}
+	}
+
+	public void editApp() {
+		WebElement getName = driver.findElement(inpName);
+		getName.sendKeys("ahaiai");
+		WebElement getDes = driver.findElement(inpDes);
+		getDes.sendKeys("test demo");
+	}
+
+	public void editRemoveApp() {
+		WebElement getName = driver.findElement(inpName);
+		getName.clear();
+		WebElement getDes = driver.findElement(inpDes);
+		getDes.clear();
+	}
+
 	// click vao man hinh them moi api
+	@Override
 	public void clikBtnAdd() {
-		driver.findElement(btnAdd).click();
+		super.clikBtnAdd();
 	}
 
 	// lay danh sach cac truong du lieu cua man hinh them moi api

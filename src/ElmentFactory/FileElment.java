@@ -6,12 +6,16 @@ import org.openqa.selenium.WebDriver;
 public class FileElment {
 	WebDriver driver;
 	public By customer = By.cssSelector(".content form select[name=customer_id]");
+	public By btnSearch = By.cssSelector(".content form button.btn-sm");
+	public By findList = By.cssSelector(".content table tbody");
+	public By findName = By.cssSelector(".content table tbody .column-customer-name");
 	public By account = By.cssSelector(".content form select[name=customer_account[id][]]");
 	public By btnSubmit = By.cssSelector(".content form button[type=submit]");
 	public By btnReset = By.cssSelector(".content form button[type=reset]");
 	public By btnListCustomer = By.linkText("Danh sách");
 	public By btnUpdate = By.linkText("Chỉnh sửa");
 	public By btnDetail = By.linkText(" Chi tiết");
+	public By btnLl = By.linkText("Làm lại");
 	public By selOA = By.cssSelector(".content form select[name=customer_oa_id]");
 	public By selFailOver = By.cssSelector("\".content form select[name=failover_sms]");
 	public By messageError = By.cssSelector(".content form label[for=inputError]");
@@ -45,8 +49,8 @@ public class FileElment {
 	public By actionTable = By.cssSelector(".content table tbody td.column-__actions__ li a");
 	public By manipulation = By.cssSelector(".content table tbody td.column-__actions__ a");
 	public By listBtn = By.cssSelector(".content .box-tools .btn-group");
-	
-//	public By 
+	public By clickOA = By.linkText("Quản lý Zalo");
+
 	public FileElment(WebDriver driver) {
 		this.driver = driver;
 	}

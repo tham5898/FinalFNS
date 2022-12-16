@@ -1,5 +1,6 @@
 package manages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -56,7 +57,7 @@ public class PageObjectManage extends FileElment {
 			break;
 		}
 		List<WebElement> list = driver.findElements(actionTable);
-		for(int j =0; j<list.size();) {
+		for (int j = 0; j < list.size();) {
 			list.get(j).click();
 			break;
 		}
@@ -76,6 +77,7 @@ public class PageObjectManage extends FileElment {
 			WebElement findCustomer = driver.findElement(customer);
 			Select selects = new Select(findCustomer);
 			List<WebElement> listCustomer = selects.getOptions();
+			System.out.println(listCustomer.size());
 			for (int i = 0; i < listCustomer.size(); i++) {
 				String value = listCustomer.get(i).getAttribute("value");
 				if (value.equals("5")) {
@@ -176,18 +178,42 @@ public class PageObjectManage extends FileElment {
 		driver.findElement(btnDetail).click();
 	}
 
-
 	public void btnDetail(String strValue) {
 		List<WebElement> list = driver.findElements(listBtn);
 		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.size());
 			String value = list.get(i).getText();
 			if (value.equals(strValue)) {
 				list.get(i).click();
-				System.out.println("ahahahq");
 				break;
 			}
 		}
 	}
 
+	public void clickOA() {
+		WebElement getCustomerOA = driver.findElement(clickOA);
+		getCustomerOA.click();
+	}
+
+	public void search() {
+		WebElement getBtnSearch = driver.findElement(btnSearch);
+		getBtnSearch.click();
+	}
+
+	public void listNameTable() {
+		ArrayList<String> name = new ArrayList<>();
+		WebElement getListTable = driver.findElement(findList);
+		List<WebElement> list = getListTable.findElements(findName);
+		for (int i = 0; i < list.size(); i++) {
+			name.add(list.get(i).getText());
+		}
+		System.out.println(name);
+	}
+
+	public void btnLL() {
+		WebElement getBtnReset = driver.findElement(btnLl);
+		getBtnReset.click();
+	}
+	public void clikBtnAdd() {
+		driver.findElement(btnAdd).click();
+	}
 }

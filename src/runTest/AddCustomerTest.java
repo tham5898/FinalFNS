@@ -63,11 +63,22 @@ public class AddCustomerTest {
 //		Thread.sleep(3000);
 //		addCustomerApp.updateApp();
 //	}
-	@Test(priority = 3)
+
+//	@Test(priority = 3)
+//	public void caseListName() {
+//		addCustomerApp = new pageObject.AddCustomerApp(driver);
+//		addCustomerApp.listNameTable();
+//	}
+
+	@Test(priority = 4)
 	private void pbli() {
 		try {
 			addCustomerApp = new pageObject.AddCustomerApp(driver);
+			addCustomerApp.listNameTable();
+			Thread.sleep(1000);
 			addCustomerApp.updateApp();
+			Thread.sleep(1000);
+			addCustomerApp.checkDataUpdate();
 			Thread.sleep(3000);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -76,9 +87,21 @@ public class AddCustomerTest {
 	}
 
 	@Test(priority = 5)
-	public void testCaseClickBtnDetail() {
+	public void testCaseUpdate() throws InterruptedException {
 		addCustomerApp = new pageObject.AddCustomerApp(driver);
-		addCustomerApp.btnDetail("Chi tiết");
-
+		addCustomerApp.editRemoveApp();
+		Thread.sleep(500);
+		addCustomerApp.editApp();
+		addCustomerApp.listIconX("x");
+		Thread.sleep(2000);
+		addCustomerApp.submit();
+		Thread.sleep(1000);
 	}
+
+//	@Test(priority = 6)
+//	public void testCaseClickBtnDetail() {
+//		addCustomerApp = new pageObject.AddCustomerApp(driver);
+//		addCustomerApp.btnDetail("Chi tiết");
+//
+//	}
 }
