@@ -47,7 +47,7 @@ public class CustomerOATest {
 	public void searchCustomer() {
 		try {
 			customerOaPage = new CustomerOAPage(driver);
-			customerOaPage.listCustomer();
+			customerOaPage.listCustomerList();
 			Thread.sleep(1000);
 			customerOaPage.search();
 			Thread.sleep(1000);
@@ -72,19 +72,23 @@ public class CustomerOATest {
 	}
 
 	@Test(priority = 5)
-	public void reset() {
+	public void reset() throws InterruptedException {
 		customerOaPage = new CustomerOAPage(driver);
 		customerOaPage.btnLL();
+		Thread.sleep(1000);
 	}
 
 	@Test(priority = 6)
-	public void addOa() {
+	public void addOaNameExisted() {
 		try {
 			customerOaPage = new CustomerOAPage(driver);
 			customerOaPage.clikBtnAdd();
 			Thread.sleep(1000);
+			customerOaPage.enterData("thamlt", "02030304050");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
 }

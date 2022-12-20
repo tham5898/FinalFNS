@@ -80,7 +80,7 @@ public class PageObjectManage extends FileElment {
 			System.out.println(listCustomer.size());
 			for (int i = 0; i < listCustomer.size(); i++) {
 				String value = listCustomer.get(i).getAttribute("value");
-				if (value.equals("5")) {
+				if (value.equals("3")) {
 					listCustomer.get(i).click();
 				}
 			}
