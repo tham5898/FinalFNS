@@ -91,8 +91,8 @@ public class AddCustomerApp extends PageObjectManage {
 	}
 
 	@Override
-	public void listCustomer() {
-		super.listCustomer();
+	public void listCustomer(String strCustomer) {
+		super.listCustomer(strCustomer);
 	}
 
 	@Override
@@ -101,11 +101,11 @@ public class AddCustomerApp extends PageObjectManage {
 	}
 
 	// enter data to form
-	public void EnterData(String strName, String strDes, String strCallback) {
+	public void EnterData(String strName, String strDes, String strCallback, String strCustomer) {
 		try {
 			WebElement name = driver.findElement(inpName);
 			name.sendKeys(strName);
-			listCustomer();
+			listCustomer(strCustomer);
 			listAccount();
 			listOA();
 			listFailOver();

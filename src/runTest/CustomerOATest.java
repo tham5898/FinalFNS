@@ -79,16 +79,45 @@ public class CustomerOATest {
 	}
 
 	@Test(priority = 6)
+	public void checkStatus() throws InterruptedException {
+		customerOaPage = new CustomerOAPage(driver);
+		customerOaPage.checkAllStatus();
+		customerOaPage.search();
+		Thread.sleep(1000);
+		customerOaPage.btnLL();
+		Thread.sleep(1000);
+		customerOaPage.checkActive();
+		customerOaPage.search();
+		customerOaPage.btnLL();
+		Thread.sleep(1000);
+		customerOaPage.checkLock();
+		customerOaPage.search();
+		Thread.sleep(1000);
+	}
+
+	@Test(priority = 7)
 	public void addOaNameExisted() {
 		try {
 			customerOaPage = new CustomerOAPage(driver);
 			customerOaPage.clikBtnAdd();
 			Thread.sleep(1000);
-			customerOaPage.enterData("thamlt", "02030304050");
-			
+			customerOaPage.enterDataAdd("thamltqư", "02030304050", "1", "77", "3");
+			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+	@Test(priority =  8)
+	public void editOA() {
+		customerOaPage = new CustomerOAPage(driver);
+		customerOaPage.updateApp();
+		customerOaPage.enterDataUpdate("tham11108", "1hdheeuee", "3", "6", "3");
+	}
+	@Test(priority = 9)
+	public void detailOA() throws InterruptedException {
+		customerOaPage = new CustomerOAPage(driver);
+		customerOaPage.detail();
+		Thread.sleep(1000);
+		customerOaPage.clickCustomerList();
+	}
 }

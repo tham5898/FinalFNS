@@ -4,9 +4,11 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="runTest.LoginTest"/>
+      <class name="runTest.CustomerAppTest"></class>
       <class name="runTest.AddCustomerTest"></class>
       <class name="runTest.CustomerOATest"></class>
-      
+      <class name="runTest.ZnsTemplateTest"></class>
+      <class name="runTest.CampaignTest"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

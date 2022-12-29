@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="runTest.CustomerOATest">
+      <class name="runTest.CampaignTest">
         <methods>
-          <include name="linkOA"/>
+          <include name="search"/>
           <include name="beforeClass"/>
         </methods>
-      </class> <!-- runTest.CustomerOATest -->
+      </class> <!-- runTest.CampaignTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

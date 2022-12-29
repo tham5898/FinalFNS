@@ -1,4 +1,4 @@
-package ElmentFactory;
+package elmentFactory;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,15 +14,16 @@ public class FileElment {
 	public By btnReset = By.cssSelector(".content form button[type=reset]");
 	public By btnListCustomer = By.linkText("Danh sách");
 	public By btnUpdate = By.linkText("Chỉnh sửa");
-	public By btnDetail = By.linkText(" Chi tiết");
+	public By btnList = By.cssSelector(".box-tools .btn-group.pull-right a");
 	public By btnLl = By.linkText("Làm lại");
 	public By selOA = By.cssSelector(".content form select[name=customer_oa_id]");
+	public By oaSearch = By.cssSelector(".content form select[name='customer_oa_id[]']");
 	public By selFailOver = By.cssSelector("\".content form select[name=failover_sms]");
 	public By messageError = By.cssSelector(".content form label[for=inputError]");
 	public By listLableDetail = By.cssSelector(".content .form-horizontal label.control-label");
 	public By listDataDetail = By.cssSelector(".content .form-horizontal .box-body");
 	public By ElmentPerPage = By.cssSelector(".content select[name=per-page]");
-	public By elmentPagination = By.cssSelector("content ul.pagination li.page-item");
+	public By elmentPagination = By.cssSelector(".pagination.pagination-sm.no-margin.pull-right");
 
 	public By btnAdd = By.linkText("Mới");
 	public By lblName = By.cssSelector(".content form label[for=name]");
@@ -50,6 +51,12 @@ public class FileElment {
 	public By manipulation = By.cssSelector(".content table tbody td.column-__actions__ a");
 	public By listBtn = By.cssSelector(".content .box-tools .btn-group");
 	public By clickOA = By.linkText("Quản lý Zalo");
+	public By clickStatus = By.cssSelector(".content form .input-group .icheck ins.iCheck-helper");
+	public By type = By.cssSelector(".content form select[name='type[]']");
+	public By typeAdd = By.cssSelector(".content form select[name='type']");
+	public By supplier = By.cssSelector(".content form select[name=supplier]");
+	public By startDay = By.cssSelector(".content form input#sending_time_start");
+	public By endDay = By.cssSelector(".content form input#sending_time_end");
 
 	public FileElment(WebDriver driver) {
 		this.driver = driver;

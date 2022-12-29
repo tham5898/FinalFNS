@@ -42,11 +42,6 @@ public class CustomerApps extends PageObjectManage {
 	}
 
 	@Override
-	public void perPage(String number) {
-		super.perPage(number);
-	}
-
-	@Override
 	public void scrollViews() {
 		super.scrollViews();
 	}

@@ -54,7 +54,7 @@ public class CustomerAppTest {
 			customerApp = new CustomerApps(driver);
 			customerApp.scrollViews();
 			Thread.sleep(1000);
-			customerApp.perPage("50");
+			customerApp.perPage();
 			Thread.sleep(3000);
 		} catch (Exception e) {
 			e.printStackTrace();
