@@ -10,7 +10,7 @@ import manages.PageObjectManage;
 import org.openqa.selenium.Keys;
 
 public class LoginPage extends PageObjectManage {
-	WebDriver driver;
+	
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);

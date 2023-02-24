@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import elmentFactory.FileElment;
 
 public class PageObjectManage extends FileElment {
-	WebDriver driver;
+
 
 	public PageObjectManage(WebDriver driver) {
 		super(driver);

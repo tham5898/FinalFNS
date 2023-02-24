@@ -90,10 +90,7 @@ public class AddCustomerApp extends PageObjectManage {
 		System.out.println(driver.findElement(lblCallback_url).getText());
 	}
 
-	@Override
-	public void listCustomer(String strCustomer) {
-		super.listCustomer(strCustomer);
-	}
+
 
 	@Override
 	public void listAccount() {

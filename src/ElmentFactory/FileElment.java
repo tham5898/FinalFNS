@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class FileElment {
-	WebDriver driver;
+	public WebDriver driver;
 	public By customer = By.cssSelector(".content form select[name=customer_id]");
 	public By btnSearch = By.cssSelector(".content form button.btn-sm");
 	public By findList = By.cssSelector(".content table tbody");
